@@ -1,0 +1,112 @@
+- Do not put the main function
+
+02_hello_name.cc:5:8: error: ‘cout’ in namespace ‘std’ does not name a type
+   std::cout << "Insert your name and age:\n";
+        ^~~~
+In file included from 02_hello_name.cc:1:0:
+/usr/include/c++/7/iostream:61:18: note: ‘std::cout’ declared here
+   extern ostream cout;  /// Linked to standard output
+                  ^~~~
+02_hello_name.cc:8:14: error: expected unqualified-id before ‘{’ token
+   int double {0};
+              ^
+02_hello_name.cc:9:8: error: ‘cin’ in namespace ‘std’ does not name a type
+   std::cin >> name >> age;
+        ^~~
+In file included from 02_hello_name.cc:1:0:
+/usr/include/c++/7/iostream:60:18: note: ‘std::cin’ declared here
+   extern istream cin;  /// Linked to standard input
+                  ^~~
+02_hello_name.cc:10:8: error: ‘cout’ in namespace ‘std’ does not name a type
+   std::cout << "Hello, " << name << " [" << age << "]\n";
+        ^~~~
+In file included from 02_hello_name.cc:1:0:
+/usr/include/c++/7/iostream:61:18: note: ‘std::cout’ declared here
+   extern ostream cout;  /// Linked to standard output
+                  ^~~~
+02_hello_name.cc:11:3: error: expected unqualified-id before ‘return’
+   return 0;
+
+- typos in function name (e.g., c0ut)
+
+02_hello_name.cc: In function ‘int main()’:
+02_hello_name.cc:5:8: error: ‘c0ut’ is not a member of ‘std’
+   std::c0ut << "Insert your name and age:\n";
+        ^~~~
+02_hello_name.cc:5:8: note: suggested alternative: ‘cout’
+   std::c0ut << "Insert your name and age:\n";
+        ^~~~
+        cout
+02_hello_name.cc:8:3: error: expected primary-expression before ‘int’
+   int double {0};
+   ^~~
+
+- typos in variable name: I tried with Name in line 9
+
+02_hello_name.cc: In function ‘int main()’:
+02_hello_name.cc:8:15: error: ‘Name’ was not declared in this scope
+   std::cin >> Name >> age;
+               ^~~~
+02_hello_name.cc:8:15: note: suggested alternative: ‘name’
+   std::cin >> Name >> age;
+               ^~~~
+               name
+
+- forget to put ; :  
+
+	-- Trying in line 6 (no ; after name)
+
+02_hello_name.cc:7:3: error: expected initializer before ‘unsigned’
+   unsigned int age;
+   ^~~~~~~~
+02_hello_name.cc:8:15: error: ‘name’ was not declared in this scope
+   std::cin >> name >> age;
+               ^~~~
+02_hello_name.cc:8:15: note: suggested alternative: ‘rename’
+   std::cin >> name >> age;
+               ^~~~
+               rename
+02_hello_name.cc:8:23: error: ‘age’ was not declared in this scope
+   std::cin >> name >> age;
+                       ^~~
+
+	-- Trying in line 9
+
+02_hello_name.cc: In function ‘int main()’:
+02_hello_name.cc:10:3: error: expected ‘;’ before ‘return’
+   return 0;
+   ^~~~~~
+
+
+- forget to include #include <iostream>
+
+02_hello_name.cc: In function ‘int main()’:
+02_hello_name.cc:5:8: error: ‘cout’ is not a member of ‘std’
+   std::cout << "Insert your name and age:\n";
+        ^~~~
+02_hello_name.cc:5:8: note: suggested alternative: ‘copy’
+   std::cout << "Insert your name and age:\n";
+        ^~~~
+        copy
+02_hello_name.cc:8:8: error: ‘cin’ is not a member of ‘std’
+   std::cin >> name >> age;
+        ^~~
+02_hello_name.cc:8:8: note: suggested alternative: ‘min’
+   std::cin >> name >> age;
+        ^~~
+        min
+02_hello_name.cc:9:8: error: ‘cout’ is not a member of ‘std’
+   std::cout << "Hello, " << name << " [" << age << "]\n";
+        ^~~~
+02_hello_name.cc:9:8: note: suggested alternative: ‘copy’
+   std::cout << "Hello, " << name << " [" << age << "]\n";
+        ^~~~
+
+- declare a variable with illegal name like int double {0};
+
+02_hello_name.cc: In function ‘int main()’:
+02_hello_name.cc:8:3: error: expected primary-expression before ‘int’
+   int double {0};
+   ^~~
+
+

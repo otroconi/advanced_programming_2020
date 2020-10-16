@@ -14,7 +14,7 @@ void get_int(int64_t& n){
 void get_double(double& N){
 
 	while(!(std::cin >> N)){
-		std::cout << "\t Bang!!! Bad choice, give me a double\n" << std::endl;
+		std::cout << "\t Bang!!! bad choice, give me a double\n" << std::endl;
 	std::cin.clear();
 	std::cin.ignore(10000,'\n');
 	}
