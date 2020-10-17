@@ -60,7 +60,7 @@ while(!(std::cin >> i))
 ```
 what is the difference?
 
-*The option while(!(std::cin >> i)) will keep asking you for the correct input, once the correct input (integer or double) is introduced it will stop. The option while(std::cin >> i) will stop only when I give it the incorrect input (in this case a string or character), if I give it the correct one it will never stop. 
+*The option while(!(std::cin >> i)) will keep asking you for the correct input, once the correct input (integer or double) is introduced it will stop. The option while(std::cin >> i) will stop only when you give it the incorrect input (in this case a string or character), if you give it the correct one it will never stop. 
 
 After that a wrong input has been parsed, you have to clear the error flag from `std::cin` calling
 ```
