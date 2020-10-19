@@ -9,7 +9,7 @@
   - forget to `#include <iostream>`
   - declare a variable with illegal name like `int double {0};`
 
-*For this exercise see the outputs of each typos in the file: compilermessages.txt*
+*For this exercise see the outputs of each typo in the file: compilermessages.txt*
 
 ## uniq
 - Write a simple version of the Unix program `uniq -c`, which, when fed with a text, outputs the same text with **consecutive** identical lines collapsed into one prepended with the number of repetitions. 
@@ -61,6 +61,8 @@ while(!(std::cin >> i))
 what is the difference?
 
 *The option while(!(std::cin >> i)) will keep asking you for the correct input, once the correct input (integer or double) is introduced it will stop. The option while(std::cin >> i) will stop only when you give it the incorrect input (in this case a string or character), if you give it the correct one it will never stop. 
+
+The code includes both functions get_int and get_double, if you want to run get_int just comment with // the part of the function get_double and uncomment the part that calls the function get_int.*
 
 After that a wrong input has been parsed, you have to clear the error flag from `std::cin` calling
 ```

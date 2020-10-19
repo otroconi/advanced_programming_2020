@@ -78,7 +78,7 @@ In file included from 02_hello_name.cc:1:0:
    ^~~~~~
 
 
-- forget to include #include <iostream>
+- forget to: #include <iostream>
 
 02_hello_name.cc: In function ‘int main()’:
 02_hello_name.cc:5:8: error: ‘cout’ is not a member of ‘std’
