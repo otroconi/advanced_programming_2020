@@ -38,15 +38,10 @@ int main() {
 
 	}
 
-	unsigned int i{0};
-	/* Let's allocate memory in the heap, because the size of the array is known at runtime*/
-
 	clock_t start = clock();
 
 	vector<size_t> primes;
 
-
-//	primes[0] = 2; //First element of the prime numbers
 	for (size_t n{2}; n<=N; ++n){
 		if(isPrimeNumber(n))
 			primes.push_back(n);
