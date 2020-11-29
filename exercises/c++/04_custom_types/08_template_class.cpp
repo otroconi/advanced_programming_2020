@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-//Improve of the vector class using c++14 features
 
 template <typename T>
 class Vector {
@@ -16,28 +15,17 @@ class Vector {
   // try to remove the const and recompile
   std::size_t size() const { return _size; }
 
-  auto& operator[](const std::size_t i) { return elem[i]; } //using deduced type c++14 (replacing T& --> auto&)
+  T& operator[](const std::size_t i) { return elem[i]; }
 
   // try to comment this line and recompile
-  const auto& operator[](const std::size_t i) const { return elem[i]; }
-
-  //for range
-  auto begin()  { return elem; }
-  const auto begin() const { return elem; }
-
-  auto end()  { return elem + size(); }
-  const auto end() const { return elem + size(); }
+  const T& operator[](const std::size_t i) const { return elem[i]; }
 };
 
-
 template <typename T>
-auto& operator<<(std::ostream& os, const Vector<T>& v) {
-	auto i=0u;
-	for(const auto& x: v){
-		os << "v[" << ++i << "] = " << x <<std::endl;
-	}
-	return os;
-
+std::ostream& operator<<(std::ostream& os, const Vector<T>& v) {
+  for (auto i = 0u; i < v.size(); ++i)
+    os << "v[" << i << "] = " << v[i] << std::endl;
+  return os;
 }
 
 int main() {
@@ -54,14 +42,12 @@ int main() {
   (*pv)[0] = -99.999;
 
   pv->operator[](1) = 77777.3333;  // or I call the function by name
-  pv->operator[](4) = 100'160.07; // using the single-quote character as a digit separator
-  pv->operator[](2) = 1'005'006.77;
 
   std::cout << *pv << std::endl;
 
   Vector<double>& rv{v};
 
-  rv[5] = 555'005;
+  rv[5] = 555;
 
   std::cout << v << std::endl;
 
