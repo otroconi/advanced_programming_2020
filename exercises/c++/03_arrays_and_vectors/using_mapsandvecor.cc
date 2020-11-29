@@ -84,9 +84,9 @@ int main(int argc, char* argv[]){
 
 	auto t0 = high_resolution_clock::now();
 
-	usevector(file);
+//	usevector(file);
 
-//	usemap(file);
+	usemap(file);
 
 //	useUOmap(file);
 

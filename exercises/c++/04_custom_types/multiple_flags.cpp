@@ -24,11 +24,11 @@ unsigned int operator&(const flags f1, const flags f2);
 flags& operator|=(flags& f1, const flags f2);
 
 int main() {
-  std::cout << "testing flag1 and flag3\n"
-            << "expected  flag1 and flag3 \n\n";
+  std::cout << "testing flag1 and flag2 and flag5\n"
+            << "expected  flag1 and flag3 and flag5 \n\n";
   do_complicated_stuff(flags::flag1 | flags::flag3 | flags::flag1 |
-                       flags::flag1);
-
+                       flags::flag5);
+/*
   std::cout << "--------------\n\n"
             << "testing comb3\n"
             << "expected  flag1, flag2 and flag3 \n\n";
@@ -44,6 +44,10 @@ int main() {
             << "expected flag3 and flag5 \n\n";
   do_complicated_stuff(flags::flag5);
 
+  std::cout << "--------------\n\n"
+            << "testing comb1\n"
+            << "expected  flag1, flag2 \n\n";
+  do_complicated_stuff(flags::comb1);*/
   return 0;
 }
 
